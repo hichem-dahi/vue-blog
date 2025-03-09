@@ -1,11 +1,5 @@
 <template>
   <v-card>
-    <div class="d-flex justify-end">
-      <div class="text-medium-emphasis text-caption px-4">
-        by {{ blogPost.author }}
-      </div>
-    </div>
-  
     <template
       #title
     >
@@ -14,6 +8,14 @@
     <template #text>
       <div class="text-blue-grey text-body-1 text-truncate">
         {{ blogPost.text }}
+      </div>
+    </template>
+
+    <template #default>
+      <div class="d-flex justify-end">
+        <div class="text-medium-emphasis text-caption px-4">
+          by {{ blogPost.author }}
+        </div>
       </div>
     </template>
 
@@ -26,6 +28,7 @@
         Read More
       </v-btn>
     </template>
+
     <template #append>
       <slot name="append" />
     </template>
