@@ -3,10 +3,14 @@
     <template #prepend>
       <div class="d-flex align-end ga-2 pa-4">
         <div
-          class="text-h6 mx-4"
+          class="d-flex align-center mx-4"
           @click="router.push('/home')"
         >
-          VueBlog
+          <v-icon
+            size="large"
+            icon="$vuetify-outline"
+          /> 
+          <span class="text-h6">ueblog</span> 
         </div> 
         <v-btn
           variant="plain"
