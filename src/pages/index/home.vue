@@ -34,12 +34,25 @@
 <script setup lang="ts">
 import { formatDate } from '@/utls/formatDate';
 
+import { fakeData } from '@/assets/fakeData';
 import type { Post } from '@/models/Post';
 
-const blogPosts = ref<Post[]>(JSON.parse(localStorage.getItem("posts") || "[]"));
+const posts = ref<Post[]>(JSON.parse(localStorage.getItem("posts") || "[]"));
 
 const sortedPosts = computed(() => {
-  return blogPosts.value.slice().sort((a, b) => {
+  return posts.value.slice().sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime()
   });
-});</script>
+});
+
+onMounted(() => {
+  // Load posts from localStorage or use fake data
+  const storedPosts = localStorage.getItem("posts");
+  if (storedPosts) {
+    posts.value = JSON.parse(storedPosts);
+  } else {
+    posts.value = fakeData;
+    localStorage.setItem("posts", JSON.stringify(fakeData));
+  }
+});
+</script>
