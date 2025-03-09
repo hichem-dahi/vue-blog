@@ -27,11 +27,10 @@
   </v-dialog>
 </template>
   
-  <script setup lang="ts">
-  import type { Post } from "@/models/Post";
-  
-  const post = defineModel<Post>('post')
-  const model = defineModel<boolean>('dialog'); 
-  const emit = defineEmits(["save"]);
-  </script>
-  
+<script setup lang="ts">
+import type { Post } from "@/models/Post";
+
+const post = defineModel<Post>('post')
+const model = defineModel<boolean>('dialog'); 
+const emit = defineEmits(["save"]);
+</script>

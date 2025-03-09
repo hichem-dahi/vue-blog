@@ -26,6 +26,7 @@ import { v4 as uuidv4 } from 'uuid';
 import type { Post } from '@/models/Post';
 
 const router = useRouter()
+
 const form = ref<Post>({
   id: uuidv4(),
   title: "",
