@@ -8,15 +8,16 @@
       v-model="post"
       title="Edit Post"
     >
-      <template #actions>
+      <template #actions="{ isValid }">
         <v-btn
-          @click="model= false"
+          @click="model = false"
         >
           cancel
         </v-btn>
         <v-btn
           color="primary"
           variant="tonal"
+          :disabled="!isValid"
           @click="emit('save', post)"
         >
           Save
