@@ -3,33 +3,28 @@
     width="60%"
     class="pa-8"
   >
-    <v-card
-      flat
-      class="mt-4"
-    >
-      <v-card-text>
-        <p class="text-caption text-blue-grey-darken-2">
-          {{ formattedDate }}
-        </p>
-        <h1 class="text-h4 font-weight-bold mt-6">
-          <span>{{ post?.title }}</span> 
-        </h1>
+    <v-sheet>
+      <p class="text-caption text-blue-grey-darken-2">
+        {{ formattedDate }}
+      </p>
+      <h1 class="text-h4 font-weight-bold mt-6">
+        <span>{{ post?.title }}</span> 
+      </h1>
   
-        <div class="d-flex align-center mt-4">
-          <div>
-            <p class="text-subtitle-2 font-weight-regular">
-              By {{ post?.author }}
-            </p>
-          </div>
+      <div class="d-flex align-center mt-4">
+        <div>
+          <p class="text-subtitle-2 font-weight-regular">
+            By {{ post?.author }}
+          </p>
         </div>
+      </div>
   
-        <v-divider class="my-6" />
+      <v-divider class="my-6" />
   
-        <div class="text-body-1 text-blue-grey-darken-2">
-          {{ post?.text }}
-        </div>
-      </v-card-text>
-    </v-card>
+      <div class="text-body-1 text-blue-grey-darken-2">
+        {{ post?.text }}
+      </div>
+    </v-sheet>
   </v-container>
 </template>
   
